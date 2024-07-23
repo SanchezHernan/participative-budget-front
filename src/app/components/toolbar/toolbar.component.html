@@ -1,0 +1,31 @@
+<mat-toolbar color="primary">
+
+    <div class="imgContainer toolbar-item">
+        <img src="assets/images/collaboration_4419067.png" alt="Descripción de la imagen" class="toolbar-image">
+    </div>
+    
+    <a mat-button routerLink="" routerLinkActive="active" class="example-spacer toolbar-item">Inicio</a>
+    <a mat-button routerLink="/proyectos" routerLinkActive="active" class="example-spacer toolbar-item">Propuestas</a>
+    
+    <div mat-button [matMenuTriggerFor]="proyectosMenu" class="example-spacer toolbar-item">Proyectos</div>
+    <a mat-button routerLink="/login" routerLinkActive="active" class="example-spacer toolbar-item">Ingresar</a>
+  
+    <button mat-icon-button [matMenuTriggerFor]="appMenu" class="menu-button" aria-label="Menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+  
+<mat-menu #proyectosMenu="matMenu">
+    <button mat-menu-item routerLink="/proyecto1">Proyecto 1</button>
+    <button mat-menu-item routerLink="/proyecto2">Proyecto 2</button>
+    <button mat-menu-item routerLink="/proyecto3">Proyecto 3</button>
+</mat-menu>
+  
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item routerLink="/">Inicio</button>
+    <button mat-menu-item routerLink="/propuestas">Propuestas</button>
+    <button mat-menu-item [matMenuTriggerFor]="proyectosMenu">Proyectos</button>
+    <button mat-menu-item routerLink="/login">Ingresar</button>
+</mat-menu>
+
+<router-outlet></router-outlet>

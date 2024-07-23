@@ -1,0 +1,48 @@
+mat-toolbar {
+    
+    .toolbar-item {
+        transition: opacity 0.3s ease;
+    }
+
+    .toolbar-item:hover {
+        opacity: 0.7; // Opacidad reducida al pasar el cursor sobre los elementos
+        cursor: pointer;
+        background-color: violet;
+    }
+
+    .imgContainer {
+        width: 30%;
+    }
+
+    .toolbar-image {
+        height: 45px;
+        width: 45px;
+        padding-top: 5px;
+    }
+
+    .example-spacer {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .menu-button {
+        display: none;
+      }
+}
+
+
+@media (max-width: 600px) {
+    mat-toolbar {
+
+        justify-content: space-between;
+
+        .example-spacer {
+            display: none;
+        }
+
+        .menu-button {
+            display: flex;
+            flex: end;
+        }
+    }
+}
