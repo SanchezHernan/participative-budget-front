@@ -2,6 +2,7 @@ mat-toolbar {
     
     .toolbar-item {
         transition: opacity 0.3s ease;
+        color: white;
     }
 
     .toolbar-item:hover {
@@ -27,9 +28,18 @@ mat-toolbar {
 
     .menu-button {
         display: none;
-      }
+    }
+
+    
+
+    .active {
+        color:#311b92;
+    }
 }
 
+
+// rgba(103, 58, 183, 0.87); #311b92;
+  
 
 @media (max-width: 600px) {
     mat-toolbar {

@@ -1,0 +1,14 @@
+Investigar la conexión de Meta:
+1.	Generar ad_account x cliente
+2.	Generar pixeles
+3.	Crear un post a partir del id account y el access token
+
+
+https://developers.facebook.com/docs/marketing-api/business-asset-management/guides/ad-accounts/
+
+https://www.facebook.com/v12.0/dialog/oauth?client_id=1339722016851978&redirect_uri=https://restaurants.club/&state=some_unique_state&scope=publish_to_groups,pages_read_engagement,pages_manage_posts
+
+
+APP_ID=1339722016851978
+
+APP_TOKEN=EAALZAVIU1Of8BO67iUyx4fL9vpx5Dr7WEGiojeZArhHZA745ZAJzXBBod3PPowAXiJuUGnXeZCEVLTvVFUbxhsGKZCYQ345yDnCPWXZAKcAIkcWI6nqMABtSh6QfGFWdESgvZAysOITdGmGV7KZBufzmMZC0jjOgQi7Dr5QsPzjf6ETb7X5rA8iwZAP4SuS04su3HU17m6gRGfFOLimutaB
