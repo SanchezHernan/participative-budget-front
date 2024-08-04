@@ -1,0 +1,31 @@
+<div class="select-row">
+    <mat-form-field>
+        <mat-label>Zona</mat-label>
+        <mat-select [(value)]="selectedZone" (selectionChange)="onZoneChange($event.value)">
+            <mat-option>Ninguna</mat-option>
+            @for (zone of zones; track zone.id) {
+                <mat-option [value]="zone.id">{{ zone.nombre }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <mat-select [(value)]="selectedState" (selectionChange)="onStateChange($event.value)">
+            <mat-option>Ninguno</mat-option>
+            @for (state of states; track state) {
+                <mat-option [value]="state">{{ state }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Año</mat-label>
+        <mat-select [(value)]="selectedYear" (selectionChange)="onYearChange($event.value)">
+            <mat-option>Ninguno</mat-option>
+            @for (year of years; track year) {
+                <mat-option [value]="year">{{ year }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+</div>

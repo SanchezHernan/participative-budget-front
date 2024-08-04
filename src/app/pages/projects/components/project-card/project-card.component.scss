@@ -1,0 +1,47 @@
+.example-card {
+    margin-bottom: 20px;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+    
+    .createdBy {
+        padding-left: 16px;
+    }
+  
+    .chip-container {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 16px 0 0 16px;
+      
+      .chip {
+            background-color: #673ab7;
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 500;
+      }
+    }
+  
+    mat-card-content{
+        margin-top: 10px;
+    }
+  
+    .example-card-footer {
+        padding: 16px;
+
+        .example-button-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        
+            span {
+                opacity: 0.6;
+            }
+        }
+
+        .example-button-row .mat-mdc-button-base {
+            margin: 8px 8px 8px 0;
+        }
+    }
+  }

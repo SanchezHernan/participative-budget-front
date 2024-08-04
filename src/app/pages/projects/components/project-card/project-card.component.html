@@ -1,0 +1,32 @@
+<mat-card class="example-card" appearance="outlined">
+    <div class="chip-container " aria-label="Project tags">
+        <div class="chip"> {{ getZoneNameById(project.zona_id) }} </div>
+        <div class="chip"> {{ project.estado }} </div>
+        <div class="chip"> {{ project.year }} </div>
+    </div>
+    <p class="createdBy">Creado por: Nombre</p>
+    <mat-card-header>
+      <mat-card-title>{{ project.titulo }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card-subtitle>Problema</mat-card-subtitle>
+        <p>{{ project.problema }}</p>
+        <mat-card-subtitle>Solución</mat-card-subtitle>
+        <p>{{ project.solucion }}</p>
+    </mat-card-content>
+    <mat-card-footer class="example-card-footer">
+        <mat-card-actions>
+            <div class="example-button-row">
+                <button mat-raised-button class="likeBtn">
+                    <mat-icon>thumb_up</mat-icon>
+                    Me Gusta
+                    <span>0</span>
+                </button>
+                <button mat-raised-button class="visibilityBtn">
+                    <mat-icon>visibility</mat-icon>
+                    Ver Más
+                </button>
+            </div>
+        </mat-card-actions>
+    </mat-card-footer>
+</mat-card>

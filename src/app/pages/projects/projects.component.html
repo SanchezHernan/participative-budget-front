@@ -1,71 +1,29 @@
 <div class="projectsContainer">
-    <div class="select-row">
-        <mat-form-field>
-            <mat-label>Zona</mat-label>
-            <mat-select [(value)]="selectedZone">
-                <mat-option>Ninguna</mat-option>
-                @for (zone of zones; track zone) {
-                    <mat-option [value]="zone">{{zone}}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
-        
-        <mat-form-field>
-            <mat-label>Estado</mat-label>
-            <mat-select [(value)]="selectedState">
-                <mat-option>Ninguno</mat-option>
-                @for (state of states; track state) {
-                    <mat-option [value]="state">{{ state }}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
+    
+    <app-filter-selection
+        [zones]="zones" 
+        [states]="states" 
+        [years]="years"
+        [selectedZone]="selectedZone"
+        [selectedState]="selectedState"
+        [selectedYear]="selectedYear"
+        (zoneChange)="onZoneChange($event)"
+        (stateChange)="onStateChange($event)"
+        (yearChange)="onYearChange($event)"
+    />
 
-        <mat-form-field>
-            <mat-label>Año</mat-label>
-            <mat-select [(value)]="selectedYear">
-                <mat-option>Ninguno</mat-option>
-                @for (year of years; track year) {
-                    <mat-option [value]="year">{{ year }}</mat-option>
-                }
-            </mat-select>
-        </mat-form-field>
-    </div>
-
-    <div class="showProjects">
-        @for (project of projects; track project.title) {
-            <mat-card class="example-card" appearance="outlined">
-                <div class="chip-container " aria-label="Project tags">
-                    @for (tag of project.tags; track tag) {
-                        <div class="chip"> {{ tag }} </div>
-                    }
-                </div>
-                <p class="createdBy">Creado por: Nombre</p>
-                <mat-card-header>
-                  <mat-card-title>{{ project.title }}</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <mat-card-subtitle>Problema</mat-card-subtitle>
-                    <p>{{ project.problem }}</p>
-                    <mat-card-subtitle>Solución</mat-card-subtitle>
-                    <p>{{ project.solution }}</p>
-                </mat-card-content>
-                <mat-card-footer class="example-card-footer">
-                    <mat-card-actions>
-                        <div class="example-button-row">
-                            <button mat-raised-button class="likeBtn">
-                                <mat-icon>thumb_up</mat-icon>
-                                Me Gusta
-                                <span>0</span>
-                            </button>
-                            <button mat-raised-button class="visibilityBtn">
-                                <mat-icon>visibility</mat-icon>
-                                Ver Más
-                            </button>
-                        </div>
-                    </mat-card-actions>
-                </mat-card-footer>
-            </mat-card>
+    <div class="showProjects" *ngIf="!isLoading; else loading" >
+        @for (project of filteredProjects; track project.titulo) {
+            <app-project-card
+                [project]="project"
+                [zones]="zones"
+            />
         }
-        
     </div>
 </div>
+
+<ng-template #loading>
+    <div class="loading-container">
+         <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
